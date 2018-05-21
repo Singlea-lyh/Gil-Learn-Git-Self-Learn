@@ -1,0 +1,25 @@
+#首先安装git 
+       sudo apt-get install git 
+#安装成功之后设置ubuntu本地Git环境
+	   git config --global user.name "your git name"
+	   git config --global user.email "your git email"
+#可以使用命令查看git本地配置
+	   git config -list
+#生成rsa公私钥
+	   ssh-keygen -C "your email" -t rsa
+	   生成过程中目录选择默认目录名字，密码可以为git登陆密码也可以为任意其他密码或空
+#将生成的公钥添加到github中
+#使用命令测试是否创建成功
+	   ssh -T git@github.com
+
+
+注意：
+    1.如果测试失败且提示：Could not open a connenction to your authentication agent.则添加命令:eval $(ssh-agent -s)手动开启ssh
+	                         ssh-add           #密码为生成公私钥时输入的密码
+    2.可以使用ssh-add -D 清除所有的公私钥对
+    3.如果在生成密钥的过程中没有使用默认的生成目录，则需要设置配置文件：
+	  vim config 
+	      Host github.com
+		    HostName github.com
+			User git
+			IdentityFile ~/.ssh/your key name  #你生成的密钥对的目录和名字
