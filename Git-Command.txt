@@ -2,5 +2,6 @@
 1. git init                    #初始化Git仓库
 2. git add .                   #添加文件到版本库，.表示全部文件，也可以指定文件名
 3. git commit -m "add message" #将文件提交到仓库
-4. git remote add origin your github road      #链接远程仓库，其中origin为任意名字可以根据自己的情况起
-5. git push -u arigin master            #将文件推送到远程仓库
+4. git remote add origin your github road      #链接远程仓库，其中origin为任意名字可以根据自己的情况起,origin相当于链接的别名
+5. git push -u origin master            #将文件推送到远程仓库
+6. git remote                          #显示建立的远程链接，指定-v可以显示详细信息
